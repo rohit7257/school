@@ -1,472 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* overflow: hidden; */
-        }
-        html,body{
-            height: 100vh;
-            width: 100vw;
-        }
-        nav{
-            height: 75px;
-            background-color: rgb(128, 64, 64);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>devlabs</title>
 
-        }
-        .nav_logo{
-            width: 25%;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            color: #fff;
-        }
-        .nav_logo img{
-            height: 65px;
-            width: 70px;
-            border-radius: 0 25px ;
-        }
-        .nav_menu{
-            height: 70px;
-            width: 40%;
-            display: flex;
-            align-items: center;
-           justify-content: space-between;
-           /* border: 2px solid red; */
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        }
-        .nav_menu a{
-            color: #fff;
-            font-size: 25px;
-            text-decoration: none;
-            /* border: 2px solid blue; */
-            opacity: 0.7;
-            padding: 10px;
-        }
-        .nav_menu a:hover{
-            opacity: 1;
-            background-color: #fff;
-            color: rgb(128, 64, 64);
-            border-radius: 7px;
-        }
-        .nav_links{
-            width: 20%;
-            display: flex;
-            gap: 20px;
-            
-        }
-        .nav_links button{
-            height: 50px;
-            width: 140px;
-            font-size: 16px;
-            font-weight: 600;
-            background-color: rgb(242, 243, 240);
-            color: rgb(128, 64, 64);
-            border: none;
-            border-radius: 15px;
-        }
-        .nav_links button:hover{
-            background-color: rgb(128, 64, 64);
-            color: rgb(242, 243, 240);
-            border: 2px solid #fff;
-        }
-        main{
-            height: calc(100% - 75px);
-            text-align: center;
-            display: flex;
-            justify-items: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        main img{
-            height: 75vh;
-        }
-        .main_img{
-            height: 80%;
-            width: 100%;
-        }
-        .main_box{
-            height: 20%;
-            width: 100%;
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-        }
-        .main_container{
-            height: 20%;
-            width: 100%;
-        }
-        main h1{
-            font-size: 2.5rem;
-            color: rgb(128, 64, 64);
-        }
-        .main_container{
-            margin-top: 75px;
-            height: 50px;
-            width: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .sb{
-            height: 25px;
-            width: 25px;
-            border: 1px solid black;
+html{
+    scroll-behavior:smooth;
+}
 
-        }
-        .box1{
-            border-radius: 50% 50% 5% 50%;
-            background-color: salmon;
-        }
-        .box2{
-            border-radius: 50% 50% 50% 5%;
-            background-color: yellow;
-        }
-        .box3{
-            border-radius: 50% 5% 50% 50%;
-            background-color: lightgreen;
-        }
-        .box4{
-            border-radius: 5% 50% 50% 50%;
-            background-color: orange;
-        }
-        .circle{
-            position: absolute;
-            height: 10px;
-            width: 10px;
-            border-radius: 50%;
-            background-color: brown;
-        }
-        .section1{
-            height: 100%;
-            background-color: rgb(128, 64, 64);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .section1 h1{
-            font-size: 3rem;
-            text-decoration: underline ;
-        }
-        .section1_container{
-            height: 80%;
-            width: 85%;
-            /* border: 2px solid blue; */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-        }
-        .section1_box{ 
-            height: 450px;
-            width: 300px;
-            border: 2px solid #fff;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            border-radius: 25px 25px 0 0;
-            overflow: hidden;
-            box-shadow: 15px 20px 25px rgb(34, 34, 39);
-        }
-        .section1_box h3{
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-        .section1_box:hover{
-            scale: 1.1;
-        }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0f0f0f;
+    overflow-x:hidden;
+}
 
-        .section1_box img{
-            height: 350px;
-            width: 300px;
-        }
-        footer{
-            height: 60%;
-            color: rgb(128, 64, 64);
-            background-color: grey;
-        }
-        .section2{
-            height: 100%;
-            display: flex;
-        }
-        .section2_left{
-           width: 35%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-right: 5px solid;
-        }
-        .section2 li{
-            font-size: 2rem;
-            color: rgb(128, 64, 64);
-        }
-        .section2 h3{
-            font-size: 2.5rem;
-            text-decoration: underline;
-            color: rgb(128, 64, 64);
-            margin-bottom:15px;
-        }
-        .section2_right{
-            width: 65%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .section2_box{
-            height: 80%;
-            width: 95%;
-            /* border: 2px solid green; */
-        }
-        .section2_right h2{
-            font-size: 2rem;
-            color: rgb(128, 64, 64);
-        }
-        .section2_right p{
-            font-size: 1.4rem;
-            margin: 5px 0 30px 0;
-           
-        }
-    </style>
+
+
+nav{
+    height:80px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+nav.scrolled{
+    background:rgba(0,0,0,0.85);
+    box-shadow:0 5px 20px rgba(0,0,0,0.6);
+}
+
+.circle{
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    position:absolute;
+    right:200px;
+    top:-60px;
+    border:10px solid yellow;
+}
+
+.nav_logo img{
+    height:60px;
+}
+
+.nav_links{
+    display:flex;
+    gap:30px;
+}
+
+.nav_links a{
+    font-size:1.2rem;
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+}
+
+.nav_links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:orange;
+    transition:0.3s;
+}
+
+.nav_links a:hover::after{
+    width:100%;
+}
+
+.nav_btn button{
+    height:45px;
+    width:140px;
+    border-radius:10px;
+    font-size:1rem;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(8px);
+    color:#fff;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+.nav_btn button:hover{
+    background:linear-gradient(45deg, purple, #ff00ff);
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,0,255,0.6);
+}
+
+/* Mobile Menu */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+/*  HEADER COMPLETE  */
+
+header{
+    min-height:100vh;
+    margin-top:80px; /* FIXED GAP */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#000,#1a1a1a);
+    padding:40px;
+}
+
+.header_left,
+.header_right{
+    width:50%;
+}
+
+.header_left{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.header_heading h1{
+    font-size:2.5rem;
+    color:orange;
+    line-height:1.3;
+}
+
+.header_content p{
+    color:white;
+    font-size:1.2rem;
+}
+
+.header_content span{
+    color:#00ff88;
+}
+
+.header_btn{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.header_btn button{
+    height:50px;
+    width:220px;
+    font-size:1rem;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.header_btn button:hover{
+    background:purple;
+}
+
+.header_right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.header_right img{
+    max-width:100%;
+    height:auto;
+}
+
+
+
+@media(max-width:768px){
+
+    nav{
+        justify-content:space-between;
+        padding:0 20px;
+    }
+
+    .nav_links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:rgba(0,0,0,0.95);
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+        padding:20px 0;
+        display:none;
+    }
+
+    .nav_links.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav_btn{
+        display:none;
+    }
+
+    header{
+        flex-direction:column;
+        text-align:center;
+        padding:30px 20px;
+        margin-top:80px; /* keeps header perfectly below navbar */
+    }
+
+    .header_left,
+    .header_right{
+        width:100%;
+    }
+
+    .header_heading h1{
+        font-size:1.8rem;
+    }
+
+    .header_content p{
+        font-size:1rem;
+    }
+
+    .header_btn{
+        justify-content:center;
+    }
+
+    .circle{
+        display:none;
+    }
+}
+
+</style>
 </head>
+
 <body>
-    <nav>
-        <div class="nav_logo">
-            <img src="./12.png" alt="">
-            <h1>My College <br> Since 2024</h1>
-        </div>
-        <div class="nav_menu">
-            <a href="">Home</a>
-            <a href="">Prospectus</a>
-            <a href="">Gallery</a>
-            <a href="">About</a>
-        </div>
-        <div class="nav_links">
-            <a href=""><button>Apply Now</button></a>
-            <a href=""><button>Contact Us</button></a>
-        </div>
-    </nav>
-    <main>
-        <div class="main_img">
-            <img src="./school.jpg" alt="">
-            <h1>Welcome to My College</h1>
-        </div>
-        <div class="main_box">
-        <div class="main_container">
-            <div class="sb box1"></div>
-            <div class="sb box2"></div>
-            <div class="sb box3"></div>
-            <div class="sb box4"></div>
-            <div class="circle"></div>
-        </div>
-        <div class="main_container">
-            <div class="sb box1"></div>
-            <div class="sb box2"></div>
-            <div class="sb box3"></div>
-            <div class="sb box4"></div>
-            <div class="circle"></div>
-        </div>
-        <div class="main_container">
-            <div class="sb box1"></div>
-            <div class="sb box2"></div>
-            <div class="sb box3"></div>
-            <div class="sb box4"></div>
-            <div class="circle"></div>
-        </div>
-        <div class="main_container">
-            <div class="sb box1"></div>
-            <div class="sb box2"></div>
-            <div class="sb box3"></div>
-            <div class="sb box4"></div>
-            <div class="circle"></div>
-        </div>
-        <div class="main_container">
-            <div class="sb box1"></div>
-            <div class="sb box2"></div>
-            <div class="sb box3"></div>
-            <div class="sb box4"></div>
-            <div class="circle"></div>
-        </div>
-    </div>
-    </main>
-    <div class="section1">
-        <h1>Administrations</h1>
-        <div class="section1_container">
-            <div class="section1_box">
-                <img src="./pro.jpg" alt="">
-                <h3>Director</h3>
-                <h2>Dr. R.S. Raghav, Ph.D.</h2>
-                
-            </div>
-            <div class="section1_box">
-                <img src="./prp.jpg" alt="">
-                <h3>Principle</h3>
-                <h2>Prof. Dr. P. Sekar, M.Sc</h2>
-            </div>
-            <div class="section1_box">
-                <img src="./ty.jpg" alt="">
-                <h3>Dean</h3>
-                <h2>Mr. K. Babu, M.Sc.</h2>
-            </div>
-            <div class="section1_box">
-                <img src="./uio.jpg" alt="">
-                <h3>Student Welfare</h3>
-                <h2>Dr. P. R. Sasikala, M.A.</h2>
-            </div>
-        </div>
-    </div>
-    <div class="section2">
-        <div class="section2_left">
-            <h3>Our Programme</h3>
-            <ul>
-                <li>Diploma</li>
-                <li>B.tech</li>
-                <li>B C A</li>
-                <li>B.com</li>
-                <li>B A</li>
-                <li>B.Sc</li>
-                <li>B B A</li>
-                <li>Agriculture</li>
-                <li>M.Tech</li>
-                <li>M B A</li>
-                <li>M C A</li>
-                <li>M S C</li>
-                <li>P H D</li>
-            </ul>
-        </div>
-        <div class="section2_right">
-            <div class="section2_box">
-            <h2>College Infrastructure</h2>
-            <p>My college infrastructure was better. Our college class was very good . In my college have Library a also. In Library all books available. In my college both girls and boys hostles available. Very neat clean campus</p>
-            <h2>Academics</h2>
-            <p>In my college academics are better than the other college. But only problem is very few faculties are there. But their provide guest faculties. But one advantage is faculty give more encouragement to the students</p>
-            <h2>Placements</h2>
-            <p>We have no placements.because of it launched recently So take time to collaborate with companies ittotally government college. In future there are placements also . But we have to do one internship and one project at the end of the our graduation </p>
-            <h2>Campus Life</h2>
-            <p>It's very enjoyable. Ragging free college. No interaction between any senior and junior. Least interaction between boys and girls. In our college doing Nss also. So very cool weather. Peace full for studying and very nearly</p>
-        </div>
-    </div>
-    </div>
-    <footer>
 
-    </footer>
+<nav id="navbar">
+    <div class="nav_logo">
+        <img src="./devlab.jpeg" alt="">
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="circle"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        var tl=gsap.timeline();
-        tl.from(".nav_logo img",{
-            y:-100,
-            // duration:1,
-            x:-50,
-        })
-        tl.from(".nav_logo h1",{
-            y:-100,
-            // duration:1,
-            x:50,
-        })
-        tl.from(".nav_menu a",{
-            y:-500,
-            duration:1,
-            scale:1.5,
-            rotate:-80,
-            stagger:0.3,
-        })
-        tl.from("button",{
-            y:-500,
-            duration:1,
-            scale:1.5,
-            rotate:-80,
-            stagger:0.3,
-        })
-        gsap.from("main h1",{
-            // scale:1.2,
-            duration:5,
-            x:-1000,
-            repeat:-1,
-            yoyo: true,
-        })
-        gsap.to(".main_container",{
-            x:-1000,
-            rotate:360,
-            duration:5,
-            repeat:-1,
-            yoyo: true
-        })
-        gsap.from(".section1 h1",{
-            x:-300,
-            y:-200,
-            opacity:0,
-            scrollTrigger:{
-                trigger:".section1 h1",
-                scroller:"body",
-                markers:false,
-                start:"top 50%",
-                duration:3,
-                scrub:2, 
-            }
-        })
-        gsap.from(".section2 li",{
-            x:-400,
-            y:-100,
-            stagger:0.1,
-            scrollTrigger:{
-            trigger:".section2 li",
-            scroller:"body",
-            start:"top 45%",
-            durtion:1,
-            markers:false,
-            opacity:0,
-           
-            }
-            
-        })
-        gsap.from(".section2 h2",{
-            x:-300,
-            y:-100,
-            display:"none",
-            durtion:2,
-            opacity:0,
-            stagger:0.5,
-            scrollTrigger:{
-            trigger:".section2 h2",
-            scroller:"body",
-            start:"top 15%",
-            durtion:2,
-            markers:false,
-            opacity:0,
-           
-            }
-        })
-        gsap.from(".section2 p",{
-            x:-300,
-            display:"none",
-            durtion:2,
-            opacity:0,
-            stagger:0.5,
-            scrollTrigger:{
-            trigger:".section2 p",
-            scroller:"body",
-            start:"top 25%",
-            durtion:2,
-            markers:false,
-            opacity:0,
-            }
-        })
-    </script>
-    
+    <div class="menu-toggle">&#9776;</div>
+
+    <div class="nav_links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#training">Training</a>
+        <a href="#service">Service</a>
+        <a href="#product">Product</a>
+    </div>
+
+    <div class="nav_btn">
+        <button>Let's Talk</button>
+    </div>
+</nav>
+
+<header id="home">
+    <div class="header_left">
+        <div class="header_heading">
+            <h1>EMPOWERING YOUNG MINDS THROUGH TRAINING AND WEB DEVELOPMENT!</h1>
+        </div>
+
+        <div class="header_content">
+            <p>We are passionate <span>WEB DEVELOPER</span> and <span>EDUCATOR</span> dedicated to providing training to students in computer science and IT.</p>
+            <br>
+            <p>We create engaging websites and offer practical skills that prepare students for their future careers.</p>
+        </div>
+
+        <div class="header_btn">
+            <button>Training Program</button>
+            <button>Web Project</button>
+        </div>
+    </div>
+
+    <div class="header_right">
+        <img src="./comp.png" alt="">
+    </div>
+</header>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+
+/* Sticky Navbar Background Change */
+window.addEventListener("scroll", function(){
+    const nav = document.getElementById("navbar");
+    nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+/* Mobile Menu Toggle */
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav_links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+/* GSAP Animations */
+gsap.from(".nav_logo",{opacity:0,duration:1,y:-30});
+gsap.from(".nav_links a",{duration:1,y:-50,stagger:0.2});
+gsap.from(".header_left",{opacity:0,x:-80,duration:1.5});
+gsap.from(".header_right",{opacity:0,x:80,duration:1.5});
+gsap.from(".circle",{duration:2,y:15,repeat:-1,yoyo:true});
+
+</script>
+
 </body>
 </html>
