@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My College - Responsive</title>
+    <title>My College</title>
     <style>
-        /* Base Reset */
+        
         *{
             margin: 0;
             padding: 0;
@@ -81,7 +81,7 @@
             border: 2px solid #fff;
         }
 
-        /* Main Section */
+       
         main {
          
             display: flex;
@@ -146,7 +146,7 @@
             border-radius: 50%; background: brown;
         }
 
-        /* Administration Section */
+     
         .section1 {
             padding: 60px 20px;
             background-color: rgb(128, 64, 64);
@@ -188,7 +188,7 @@
             padding-bottom: 20px; 
         }
 
-        /* Content Section */
+      
         .section2 {
             display: flex;
             flex-wrap: wrap;
@@ -227,7 +227,7 @@
             background: #333; 
         }
 
-        /* Media Queries for Mobile */
+    
         @media (max-width: 768px) {
             .nav_menu { display: none; } 
             .section2_left { border-right: none; border-bottom: 5px solid rgb(128, 64, 64); }
@@ -353,7 +353,7 @@
     <script>
         var tl = gsap.timeline();
         
-        // Nav Entrance
+     
         tl.from(".nav_logo", { 
             y: -50, 
             opacity: 0, 
@@ -379,7 +379,6 @@
             ease: "sine.inOut"
         });
 
-        // Shape Rotation
         gsap.to(".main_container", {
             // rotate: 360,
             // duration: 5,
@@ -392,7 +391,7 @@
             yoyo: true
         });
 
-        // Scroll Trigger: Section 1 Header
+       
         gsap.from(".section1 h1", {
             scrollTrigger: {
                 trigger: ".section1",
@@ -403,7 +402,6 @@
             duration: 1
         });
 
-        // Scroll Trigger: Section 2 List
         gsap.from(".section2 li", {
             scrollTrigger: {
                 trigger: ".section2_left",
@@ -417,3 +415,4 @@
 </body>
 
 </html>
+
